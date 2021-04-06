@@ -1,7 +1,6 @@
 const express = require("express");
 const User = require("../models/User.model");
-const { encryptPassword, verifyPassword } = require("../utils/passwordManager");
-console.log(verifyPassword);
+const passwordManager = require("../utils/passwordManager");
 
 const router = express.Router();
 
