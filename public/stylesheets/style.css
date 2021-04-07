@@ -69,6 +69,10 @@ nav > a + a {
   padding: 15px;
 }
 
+.form-auth input:invalid {
+  border: 1px solid red;
+}
+
 .form-auth button {
   width: 350px;
   height: 50px;

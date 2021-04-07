@@ -4,7 +4,7 @@
     <form class="form-auth" action="/signup" method="post">
         <div>
             <label for="username">Nome de usuário</label>
-            <input type="text" name="username" id="username" placeholder="Digite o seu nome de usuário">
+            <input type="text" name="username" id="username" placeholder="Digite o seu nome de usuário" required minlength="5" maxlength="50">
             {{#if usernameError}}
             <div>
                 <span>{{usernameError}}</span>
@@ -14,7 +14,7 @@
 
         <div>
             <label for="passoword">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha">
+            <input type="password" name="password" id="password" placeholder="Digite sua senha" required minlength="6" maxlength="50">
             {{#if passwordError}}
             <div>
                 <span>{{passwordError}}</span>
