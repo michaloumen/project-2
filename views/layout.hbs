@@ -11,8 +11,13 @@
 
   <body>
     <nav>
+      {{#if loggedUser}}
+      <span>Olá, {{loggedUser.username}}</span>
+      <a href="/logout">Logout</a>
+      {{else}}
       <a href="/signup">Cadastrar</a>
       <a href="/login">Logar</a>
+      {{/if}}
     </nav>
 
     {{{body}}}

@@ -5,11 +5,21 @@
         <div>
             <label for="username">Nome de usuário</label>
             <input type="text" name="username" id="username" placeholder="Digite o seu nome de usuário">
+            {{#if usernameError}}
+            <div>
+                <span>{{usernameError}}</span>
+            </div>
+            {{/if}}
         </div>
 
         <div>
             <label for="passoword">Senha</label>
             <input type="password" name="password" id="password" placeholder="Digite sua senha">
+            {{#if passwordError}}
+            <div>
+                <span>{{passwordError}}</span>
+            </div>
+            {{/if}}
         </div>
 
         {{#if errorMessage}}

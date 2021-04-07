@@ -11,6 +11,7 @@ const app = express();
 
 // require database configuration
 require("./configs/db.config");
+require("./configs/session.config")(app);
 
 // Middleware Setup
 app.use(logger("dev"));
@@ -34,5 +35,8 @@ app.use("/", index);
 
 const authRoutes = require("./routes/authRoutes.routes");
 app.use("/", authRoutes);
+
+const protectedRoutes = require("./routes/protectedRoutes.routes");
+app.use("/", protectedRoutes);
 
 module.exports = app;
