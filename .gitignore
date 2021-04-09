@@ -8,5 +8,7 @@ npm-debug.log
 # We are submitting it for learning purposes 
 .env
 
+.DS*
+
 
 
