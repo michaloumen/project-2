@@ -1,9 +1,9 @@
 const express = require("express");
-const protectedRoute = require("../middlewares/protectedRoutes");
+const userSessionValidationMiddleware = require('../middlewares/userSessionValidation.middleware');
 
 const router = express.Router();
 
-router.use(protectedRoute);
+router.use(userSessionValidationMiddleware);
 
 router.get("/main", (req, res, next) => {
   console.log(req.session.currentUser);
