@@ -1,6 +1,6 @@
 const { isUserExists, isPasswordRigth } = require('../validations/auth.validations');
 const passwordManager = require('../utils/passwordManager');
-const Patient = require('../models/Patient.model');
+const { Patient } = require('../models/Users.model');
 
 class AuthPatientController {
 
