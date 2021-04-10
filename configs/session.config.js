@@ -6,6 +6,7 @@ module.exports = (app) => {
     session({
       secret: process.env.SESS_SECRET,
       resave: true,
+      rolling: true,
       saveUninitialized: true,
       name: "my-cookie",
       cookie: {

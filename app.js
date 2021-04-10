@@ -7,8 +7,8 @@ const path = require('path');
 const app = express();
 
 const index = require('./routes/index.routes');
-const authPatientRoutes = require('./routes/authPatient.routes');
-const protectedRoutes = require('./routes/protectedRoutes.routes');
+const authRoutes = require('./routes/auth.routes');
+// const protectedRoutes = require('./routes/protectedRoutes.routes');
 
 // require database configuration
 require('./configs/db.config');
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use('/', index);
-app.use('/', authPatientRoutes);
-app.use('/', protectedRoutes);
+app.use('/', authRoutes);
+// app.use('/', protectedRoutes);
 
 module.exports = app;

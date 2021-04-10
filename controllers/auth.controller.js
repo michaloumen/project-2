@@ -3,7 +3,6 @@ const passwordManager = require('../utils/passwordManager');
 const { Patient } = require('../models/Users.model');
 
 class AuthPatientController {
-
   static async postCreateNewUser(req, res) {
     try {
       const { userEmail, userPassword } = req.body;
@@ -23,7 +22,7 @@ class AuthPatientController {
     }
   }
 
-  static async postLoginPatient(req, res) {
+  static async postLogin(req, res) {
     try {
       const { userEmail, userPassword } = req.body;
 
