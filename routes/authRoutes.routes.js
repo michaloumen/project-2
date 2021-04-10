@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../models/User.model");
+const User = require("../models/Patient.model");
 const passwordManager = require("../utils/passwordManager");
 const validateParams = require("../middlewares/authParamsValidation");
 
@@ -57,7 +57,7 @@ router.post("/login", validateParams, async (req, res, next) => {
 
     res.redirect("/main");
   } catch (error) {
-    return next(error);
+    return "next(error)";
   }
 });
 
@@ -65,5 +65,9 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/login");
 });
+
+router.get("/about", (req, res) => res.render("about"));
+router.get("/treatments", (req, res) => res.render("treatments"));
+router.get("/contact", (req, res) => res.render("contact"));
 
 module.exports = router;
