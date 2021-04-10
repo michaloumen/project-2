@@ -9,13 +9,14 @@ const patientSchema = new Schema(
     adress: { type: String },
     email: { type: String, required: true },
     phone: { type: String },
-    dentist: { type: [Types.ObjectId], ref: "Dentist" },
+    dentist: { type: [Types.ObjectId], ref: 'Dentist' },
     returnDate: { type: Date },
+
   },
   {
     timestamps: true,
   }
 );
-const Patient = model("Patient", patientSchema);
+const Patient = model('Patient', patientSchema);
 
 module.exports = Patient;

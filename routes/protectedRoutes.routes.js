@@ -1,5 +1,5 @@
 const express = require("express");
-const userSessionValidationMiddleware = require("../middlewares/userSessionValidation.middleware");
+const userSessionValidationMiddleware = require('../middlewares/userSessionValidation.middleware');
 
 const router = express.Router();
 
