@@ -11,7 +11,7 @@ const patientSchema = new Schema(
     phone: { type: String },
     dentist: { type: [Types.ObjectId], ref: 'Dentist' },
     returnDate: { type: Date },
-
+    role: { type: String, enum: 'patient' }
   },
   {
     timestamps: true,
