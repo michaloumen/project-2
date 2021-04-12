@@ -1,20 +1,15 @@
-const isAuthDentist = (req, res, next) => {
-  console.log('michlle');
+const isAuthDentist = (passwordSite) => {
+  console.log("michlle");
 
-  const { passwordSite } = req;
-
-  console.log('passwordSite', passwordSite)
-  console.log('process.env.DENTIST_SINGUP', process.env.DENTIST_SINGUP)
-
+  console.log("passwordSite", passwordSite);
+  console.log("process.env.DENTIST_SINGUP", process.env.DENTIST_SINGUP);
 
   if (passwordSite === process.env.DENTIST_SINGUP) {
-    req.DENTIST_SINGUP = true;
-
-    return next();
+    return true;
   }
 
-  console.log('não deu certo')
-  return res.render('error');
+  console.log("não deu certo");
+  return false;
 };
 
 module.exports = isAuthDentist;
