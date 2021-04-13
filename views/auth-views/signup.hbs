@@ -1,20 +1,32 @@
 <main class="form-auth-container">
     <h1>Preencha os seus dados</h1>
-    
+
     <form class="form-auth" action="/signup" method="post">
         <div>
-            <label for="username">Nome de usuário</label>
-            <input type="text" name="username" id="username" placeholder="Digite o seu nome de usuário" required minlength="5" maxlength="50">
-            {{#if usernameError}}
+            <label for="userName">Nome de usuário</label>
+            <input type="text" name="userName" id="userName" placeholder="Digite o seu email" required minlength="5"
+                maxlength="50">
+            {{#if userNameError}}
             <div>
-                <span>{{usernameError}}</span>
+                <span>{{userNameError}}</span>
+            </div>
+            {{/if}}
+        </div>
+        <div>
+            <label for="userEmail">Nome de usuário</label>
+            <input type="email" name="userEmail" id="userEmail" placeholder="Digite o seu email" required minlength="5"
+                maxlength="50">
+            {{#if userEmailError}}
+            <div>
+                <span>{{userEmailError}}</span>
             </div>
             {{/if}}
         </div>
 
         <div>
             <label for="passoword">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha" required minlength="6" maxlength="50">
+            <input type="password" name="password" id="password" placeholder="Digite sua senha" required minlength="6"
+                maxlength="50">
             {{#if passwordError}}
             <div>
                 <span>{{passwordError}}</span>
@@ -23,9 +35,9 @@
         </div>
 
         {{#if errorMessage}}
-            <div>
-                <span>{{errorMessage}}</span>
-            </div>
+        <div>
+            <span>{{errorMessage}}</span>
+        </div>
         {{/if}}
 
         <button type="submit">Cadastrar</button>
