@@ -1,44 +1,68 @@
 const { isUserExists, isPasswordRigth } = require('../validations/auth.validations');
 const passwordManager = require('../utils/passwordManager');
-const { Patient } = require('../models/Users.model');
+const isAuthDentist = require("../middlewares/verifyAuthDentist.middlewar");
 
-class AuthPatientController {
+const { Patient, Dentist } = require('../models/Users.model');
+
+class AuthController {
+  static async _buildNewUser(req) {
+    const isDentist = !!req.user.role;
+    const { userEmail: email, password, userName: name } = req.body;
+
+    const ecryptPassword = await passwordManager.encryptPassword(password);
+    let newUser = { name, email, ecryptPassword };
+
+    if (isUserExists(email)) return res.render("auth-views/signup", { errorMessage: "Nome de usuário já existe. Por favor, escolha outro" });
+
+    return isDentist ? { ...newUser, cro: req.body.cro, specialty: req.body.specialty ? req.body.specialty : '', role: req.user.role } : newUser;
+  }
+
   static async postCreateNewUser(req, res) {
     try {
-      const { userEmail, userPassword } = req.body;
+      const newUser = this._buildNewUser(req);
 
-      if (isUserExists(userEmail)) return res.render("auth-views/signup", { errorMessage: "Nome de usuário já existe. Por favor, escolha outro" });
+      const isDentist = !!req.user.role;
 
-      const newUser = {
-        email: userEmail,
-        password: await passwordManager.encryptPassword(userPassword)
-      }
+      isDentist ? await Dentist.create(newUser) : await Patient.create(newUser);
 
-      await Patient.create(newUser);
-
-      res.redirect('/login');
+      return res.redirect('/login');
     } catch (error) {
       return next(error);
     }
   }
 
-  static async postLogin(req, res) {
+  static async postLoginUser(req, res) {
     try {
+      const isDentist = !!req.user.role;
       const { userEmail, userPassword } = req.body;
 
       if (!isUserExists(userEmail)) return res.render("auth-views/login", { errorMessage: 'Nome de usuário ou senha incorretos' });
 
-      const patientFromDB = await Patient.findOne({ email });
+      const userFromDB = isDentist ? await Dentist.findOne({ email }) : await Patient.findOne({ email });
 
       if (!isPasswordRigth(userPassword, userFromDB.password)) return res.render("auth-views/login", { errorMessage: 'Nome de usuário ou senha incorretos' });
 
-      req.session.currentUser = patientFromDB;
+      req.session.currentUser = userFromDB;
 
-      res.redirect("/main");
+      return isDentist ? res.redirect("/dentist") : res.redirect("/patient");
     } catch (error) {
       return "next(error)";
     }
   }
+
+  static async authDentistRouteSignUp(req, res, next) {
+    const { passwordSite } = req.body;
+    const isAuth = await isAuthDentist(passwordSite);
+    if (isAuth) {
+      req.user.role = 'dentist';
+
+      return res.render("auth-views/signup")
+    }
+
+    return res.render("auth-views/dentistAuth", {
+      error: "Senha de acesso incorreta",
+    });
+  }
 }
 
-module.exports = AuthPatientController;
+module.exports = AuthController;

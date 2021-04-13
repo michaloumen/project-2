@@ -1,15 +1,15 @@
 const router = require("express").Router();
-const AuthPatientController = require("../controllers/auth.controller");
+const AuthController = require("../controllers/auth.controller");
 
 router.get("/signup", (req, res) => res.render("auth-views/signup"));
-router.post("/signup", async () => await AuthPatientController.postCreateNewUser);
+router.post("/signup", async () => await AuthController.postCreateNewUser);
 
 router.get("/dentist/signup", (req, res) => res.render("auth-views/dentistAuth"));
-router.post("/dentist/signup", async () => await AuthPatientController.authDentistRouteSignUp);
+router.post("/dentist/signup", async () => await AuthController.authDentistRouteSignUp);
 
 
 router.get("/login", (req, res) => res.render("auth-views/login"));
-router.post("/login", async () => await AuthPatientController.postLoginUser);
+router.post("/login", async () => await AuthController.postLoginUser);
 
 router.get("/logout", (req, res) => {
   req.session.destroy();
