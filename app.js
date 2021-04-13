@@ -6,6 +6,8 @@ const path = require('path');
 
 const app = express();
 
+const userSessionValidationMiddleware = require('./middlewares/userSessionValidation.middleware');
+
 const index = require('./routes/index.routes');
 const authRoutes = require('./routes/auth.routes');
 // const protectedRoutes = require('./routes/protectedRoutes.routes');
@@ -26,8 +28,7 @@ hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 app.use(express.static(path.join(__dirname, 'public')));
 /* app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico'))); */
 
-// default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.use((req, res, next) => userSessionValidationMiddleware(req, res, next));
 
 app.use('/', index);
 app.use('/', authRoutes);
