@@ -10,7 +10,6 @@ const userSessionValidationMiddleware = require('./middlewares/userSessionValida
 
 const index = require('./routes/index.routes');
 const authRoutes = require('./routes/auth.routes');
-// const protectedRoutes = require('./routes/protectedRoutes.routes');
 
 // require database configuration
 require('./configs/db.config');
@@ -28,10 +27,9 @@ hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 app.use(express.static(path.join(__dirname, 'public')));
 /* app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico'))); */
 
-app.use((req, res, next) => userSessionValidationMiddleware(req, res, next));
 
 app.use('/', index);
 app.use('/', authRoutes);
-// app.use('/', protectedRoutes);
+app.use(userSessionValidationMiddleware);
 
 module.exports = app;

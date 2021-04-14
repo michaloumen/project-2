@@ -19,7 +19,7 @@ class AuthController {
 
   static async postCreateNewUser(req, res) {
     try {
-      const newUser = this._buildNewUser(req);
+      const newUser = await this._buildNewUser(req);
 
       const isDentist = !!req.user.role;
 
@@ -54,7 +54,12 @@ class AuthController {
     const { passwordSite } = req.body;
     const isAuth = await isAuthDentist(passwordSite);
     if (isAuth) {
-      req.user.role = 'dentist';
+      req = {
+        ...req,
+        user: {
+          role: 'dentist',
+        }
+      };
 
       return res.render("auth-views/signup")
     }

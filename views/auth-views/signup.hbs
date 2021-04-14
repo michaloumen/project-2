@@ -4,8 +4,8 @@
     <form class="form-auth" action="/signup" method="post">
         <div>
             <label for="userName">Nome de usuário</label>
-            <input type="text" name="userName" id="userName" placeholder="Digite o seu email" required minlength="5"
-                maxlength="50">
+            <input type="text" name="userName" id="userName" placeholder="Digite o seu nome completo" required
+                minlength="5" maxlength="50">
             {{#if userNameError}}
             <div>
                 <span>{{userNameError}}</span>
@@ -13,8 +13,8 @@
             {{/if}}
         </div>
         <div>
-            <label for="userEmail">Nome de usuário</label>
-            <input type="email" name="userEmail" id="userEmail" placeholder="Digite o seu email" required minlength="5"
+            <label for="userEmail">Email</label>
+            <input type="email" name="userEmail" id="userEmail" placeholder="email@email.com" required minlength="5"
                 maxlength="50">
             {{#if userEmailError}}
             <div>
