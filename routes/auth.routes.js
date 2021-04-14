@@ -4,9 +4,10 @@ const AuthController = require("../controllers/auth.controller");
 router.get("/signup", (req, res) => res.render("auth-views/signup"));
 router.post("/signup", AuthController.postCreateNewUser);
 
-router.get("/dentist/signup", (req, res) => res.render("auth-views/dentistAuth"));
+router.get("/dentist/signup", (req, res) =>
+  res.render("auth-views/dentistAuth")
+);
 router.post("/dentist/signup", AuthController.authDentistRouteSignUp);
-
 
 router.get("/login", (req, res) => res.render("auth-views/login"));
 router.post("/login", AuthController.postLoginUser);

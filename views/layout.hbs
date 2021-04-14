@@ -10,21 +10,32 @@
 </head>
 
 <body>
-  <nav>
-    {{#if loggedUser}}
-    <span>Olá, {{loggedUser.username}}</span>
-    <a href="/logout">Logout</a>
-    {{else}}
-    <a href="/signup">Crie sua conta</a>
-    <a href="/login">Logar</a>
-    <a href="/">Home</a>
-    <a href="#about">Quem Somos</a>
-    <a href="#treatments">Tratamentos</a>
-    <a href="#contact">Contato</a>
-    {{/if}}
-  </nav>
+
+<header>
+      <nav>
+      {{#if loggedUser}}
+      <span>Olá, {{loggedUser.username}}</span>
+      <a href="/logout">Logout</a>
+      {{else}}
+      <a href="/">Home</a>
+{{!--       <a href="#about">About Us</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#contact">Contact</a> --}}
+       <a href="/signup">Create your account</a>
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav>
+
+    <div class="text-header">
+      <h1>WE PRIORITY YOUR</h1>
+      <h2><b>NEW SMILE</b></h2>
+    </div>
+
+  </header>
+  
 
   {{{body}}}
+  
 
   <script src="/javascripts/script.js"></script>
 </body>
