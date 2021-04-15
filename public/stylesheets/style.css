@@ -2,27 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
 }
 
 nav {
   height: 90px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255);
   padding: 0 90px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* position: fixed; */
-}
-
-nav > span {
-  color: darkslategray;
-  font-size: 18px;
-  margin-right: 50px;
+  position: fixed;
 }
 
 nav > a {
+  font-family: "Nunito Sans", sans-serif;
   text-decoration: none;
   color: darkslategray;
   font-size: 18px;
@@ -37,51 +32,105 @@ nav > a + a {
   margin-left: 50px;
 }
 
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://upload.wikimedia.org/wikipedia/commons/0/06/Photographer.jpg");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
 header {
-  background-image: url("https://post.healthline.com/wp-content/uploads/2019/08/friends-selfie-mixed-race-happy-1200x628-facebook.jpg");
-  background-repeat: no-repeat;
+  background: url("https://post.healthline.com/wp-content/uploads/2019/08/friends-selfie-mixed-race-happy-1200x628-facebook.jpg")
+    no-repeat center center fixed;
   background-size: cover;
-  height: calc(100vh - 100px);
+  height: calc(90vh - 60px);
   width: 100%;
   display: flex;
   flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .text-header > h1 {
-  font-size: 20px;
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
   font-weight: lighter;
 }
 
 .text-header {
+  font-family: "Amatic SC", cursive;
   color: aliceblue;
-  font-size: 40px;
-  margin-top: 120px;
+  font-size: 50px;
+  margin-top: 250px;
   margin-left: 130px;
   line-height: 1.2;
 }
 
-#features {
+.about-block {
+  background-color: #ece8d9;
+}
+
+.about-block > p {
+  padding: 8rem;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #25291cff;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: justify;
+}
+
+.about-block > h1 {
+  font-weight: lighter;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #25291cff;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+}
+
+.about-block > h2 {
+  font-weight: bolder;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #25291cff;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+}
+
+.about-block > img {
+  border-radius: 50%;
+  width: 20%;
+  align-items: center;
+}
+
+#photo-parallax {
+  background: url("https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: calc(80vh - 110px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#photo-parallax > h1 {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 100px;
+  color: #25291cff;
+  margin-top: 120px;
+  line-height: 1.5;
+}
+
+#treatments {
   min-width: 600px;
   padding: 5rem;
 }
 
-.features-group {
+.types-of-treatment {
   padding-top: 20px;
   margin-bottom: 4rem;
   background: #b8ebd0;
 }
 
-.features-image > img {
+.treatment-image > img {
   width: 350px;
   height: auto;
   float: left;
@@ -90,7 +139,7 @@ header {
   box-shadow: 0px 2px 20px 0 black;
 }
 
-.features-image-inverted > img {
+.treatment-image-inverted > img {
   width: 350px;
   height: auto;
   float: right;
@@ -99,14 +148,15 @@ header {
   box-shadow: 0px 2px 20px 0 black;
 }
 
-.features-text > h1 {
+.treatment-text > h1 {
   padding-top: 20px;
   margin-bottom: -20px;
   font-size: 20px;
   color: #25291cff;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.features-text > p {
+.treatment-text > p {
   margin-bottom: -20px;
   font-size: 15px;
   min-width: 1200px;
@@ -115,17 +165,20 @@ header {
   text-align: justify;
   text-justify: inter-word;
   color: #25291cff;
+  line-height: 1.5;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.features-text-inverted > h1 {
+.treatment-text-inverted > h1 {
   padding-top: 20px;
   margin-left: 50px;
   font-size: 20px;
   color: #25291cff;
   margin-bottom: -20px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-.features-text-inverted > p {
+.treatment-text-inverted > p {
   margin-bottom: 30px;
   font-size: 15px;
   min-width: 1200px;
@@ -134,7 +187,9 @@ header {
   text-align: justify;
   text-justify: inter-word;
   color: #25291cff;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
+  line-height: 1.5;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .form-auth-container {
@@ -185,4 +240,24 @@ header {
 .form-auth button:hover {
   background-color: #008000;
   transition: background-color 0.5s, color 0.5s;
+}
+
+.row {
+  display: block;
+  min-height: 1px;
+  margin: 20px;
+  border: 3px solid #73ad21;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  width: 40%;
+  float: left;
+  padding: 0 5%;
+  color: blue;
+  font-family: Verdana;
+  font-size: 15px;
 }
