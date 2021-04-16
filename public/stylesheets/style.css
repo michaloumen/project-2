@@ -2,24 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+body {
   font-family: "Nunito Sans", sans-serif;
 }
 
 nav {
   height: 90px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255);
   padding: 0 90px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* position: fixed; */
-}
-
-nav > span {
-  color: darkslategray;
-  font-size: 18px;
-  margin-right: 50px;
+  position: fixed;
 }
 
 nav > a {
@@ -29,7 +28,7 @@ nav > a {
 }
 
 nav > a:hover {
-  color: green;
+  color: #008000;
   transition: color 0.5s;
 }
 
@@ -37,37 +36,157 @@ nav > a + a {
   margin-left: 50px;
 }
 
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://upload.wikimedia.org/wikipedia/commons/0/06/Photographer.jpg");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
+.header {
+  background: url("https://post.healthline.com/wp-content/uploads/2019/08/friends-selfie-mixed-race-happy-1200x628-facebook.jpg")
+    no-repeat center center fixed;
   background-size: cover;
-  position: relative;
-}
-
-header {
-  background-image: url("https://post.healthline.com/wp-content/uploads/2019/08/friends-selfie-mixed-race-happy-1200x628-facebook.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 100px);
+  height: calc(90vh - 60px);
   width: 100%;
   display: flex;
   flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .text-header > h1 {
-  font-size: 20px;
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
   font-weight: lighter;
 }
 
 .text-header {
+  font-family: "Amatic SC", cursive;
   color: aliceblue;
-  font-size: 40px;
-  margin-top: 120px;
+  font-size: 50px;
+  margin-top: 250px;
   margin-left: 130px;
   line-height: 1.2;
+}
+
+.about-block {
+  background-color: #ece8d9;
+  padding-bottom: 10rem;
+  margin-bottom: -10rem;
+}
+
+.about-block > p {
+  padding: 8rem;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #25291cff;
+}
+
+.about-block > h1 {
+  font-weight: lighter;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #25291cff;
+  text-align: center;
+}
+
+.about-block > h2 {
+  font-weight: bolder;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #25291cff;
+  text-align: center;
+}
+
+.about-block > img {
+  border-radius: 50%;
+  width: 20%;
+  align-items: center;
+}
+
+#photo-parallax {
+  background: url("https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: calc(80vh - 110px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#photo-parallax > h1 {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 100px;
+  color: #25291cff;
+  margin-top: 120px;
+  line-height: 1.5;
+}
+
+#treatments {
+  min-width: 600px;
+  padding: 5rem;
+}
+
+.types-of-treatment {
+  padding-top: 20px;
+  margin-bottom: 4rem;
+  background: #b8ebd0;
+}
+
+.treatment-image > img {
+  width: 350px;
+  height: auto;
+  float: left;
+  margin-right: 60px;
+  margin-left: 20px;
+  box-shadow: 0px 2px 20px 0 black;
+}
+
+.treatment-image-inverted > img {
+  width: 350px;
+  height: auto;
+  float: right;
+  margin-left: 60px;
+  margin-right: 20px;
+  box-shadow: 0px 2px 20px 0 black;
+}
+
+.treatment-text > h1 {
+  padding-top: 20px;
+  margin-bottom: -20px;
+  font-size: 20px;
+  color: #25291cff;
+}
+
+.treatment-text > p {
+  margin-bottom: -20px;
+  font-size: 15px;
+  min-width: 1200px;
+  padding: 3rem 3rem 3rem 6rem;
+  place-self: center;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #25291cff;
+  line-height: 1.5;
+}
+
+.treatment-text-inverted > h1 {
+  padding-top: 20px;
+  margin-left: 50px;
+  font-size: 20px;
+  color: #25291cff;
+  margin-bottom: -20px;
+}
+
+.treatment-text-inverted > p {
+  margin-bottom: 30px;
+  font-size: 15px;
+  min-width: 1200px;
+  padding: 3rem 6rem 3rem 3rem;
+  place-self: center;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #25291cff;
+  padding-bottom: 90px;
 }
 
 .form-auth-container {
@@ -81,7 +200,7 @@ header {
 }
 
 .form-auth {
-  margin-top: 80px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +218,7 @@ header {
 .form-auth input {
   width: 350px;
   height: 50px;
-  border: 1px solid gray;
+  border: 1px solid #25291c;
   border-radius: 6px;
   padding: 15px;
 }
@@ -110,78 +229,39 @@ header {
   border: none;
   border-radius: 6px;
   font-size: 18px;
-  background-color: lightseagreen;
+  background-color: #5c77ff;
   color: aliceblue;
   margin-top: 20px;
 }
 
 .form-auth button:hover {
-  background-color: blue;
+  background-color: #008000;
   transition: background-color 0.5s, color 0.5s;
 }
 
-#features {
-  padding-top: 3rem;
-  padding-right: 10rem;
-  padding-left: 10rem;
-  @media (min-width: 600px) padding: 5rem;
-}
-
-.features-group {
-  padding-top: 20px;
-  background: rgba(158, 216, 157, 0.3);
-  margin-bottom: 5rem;
-}
-
-.features-image > img {
+.row {
   display: block;
-  width: 350px;
+  min-height: 1px;
+  margin: 60px;
+  margin-left: 20rem;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  width: 40%;
   float: left;
-  margin-right: 70px;
-  box-shadow: 0px 2px 20px 0 black;
-}
-
-.features-image-inverted > img {
-  width: 350px;
-  float: right;
-  margin-left: 70px;
-  box-shadow: 0px 2px 20px 0 black;
-}
-
-.features-text > h1 {
-  padding-top: 20px;
-  font-size: 20px;
-  color: #444444;
-  margin-bottom: -20px;
-}
-
-.features-text > p {
-  margin-bottom: -20px;
+  padding: 0 5%;
   font-size: 15px;
-  padding: 2rem;
-  @media (min-width: 1200px) grid-column: 3 / span 2 grid-row: 1 padding: 3rem 3rem 3rem 6rem;
-  place-self: center;
-  text-align: justify;
-  text-justify: inter-word;
-  color: #444444;
 }
 
-.features-text-inverted > h1 {
-  padding-top: 20px;
-  margin-left: 50px;
-  font-size: 20px;
-  color: #444444;
-  margin-bottom: -20px;
+.column > img {
+  border-radius: 50%;
+  width: 50%;
 }
 
-.features-text-inverted > p {
-  font-size: 15px;
-  padding: 2rem;
-  @media (min-width: 1200px) grid-column: 3 / span 2 grid-row: 1 padding: 3rem 3rem 3rem 6rem;
-  place-self: center;
-  grid-column: 1 / span 2;
-  padding: 3rem 6rem 3rem 3rem;
-  text-align: justify;
-  text-justify: inter-word;
-  color: #444444;
+.column > p {
 }
