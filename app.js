@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", index);
 app.use("/", authRoutes);
-app.use("/schedule", schedule);
+app.use("/agenda", schedule);
 app.use(userSessionValidationMiddleware);
 
 module.exports = app;
