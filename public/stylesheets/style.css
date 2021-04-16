@@ -19,21 +19,26 @@ nav {
   align-items: center;
   justify-content: flex-end;
   position: fixed;
+  top: 0;
 }
 
-nav > a {
+.container > a {
   text-decoration: none;
   color: darkslategray;
   font-size: 18px;
 }
 
-nav > a:hover {
+.container > a:hover {
   color: #008000;
   transition: color 0.5s;
 }
 
-nav > a + a {
+.container > a + a {
   margin-left: 50px;
+}
+
+body > .container{
+  margin-top: 90px;
 }
 
 .header {
@@ -238,19 +243,18 @@ nav > a + a {
   background-color: #008000;
   transition: background-color 0.5s, color 0.5s;
 }
-
-.row {
+ .row {
   display: block;
   min-height: 1px;
   margin: 60px;
   margin-left: 20rem;
-}
+} 
 
-.row:after {
+/* .row:after {
   content: "";
   display: table;
   clear: both;
-}
+}  */
 .column {
   width: 40%;
   float: left;
