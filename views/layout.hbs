@@ -16,37 +16,31 @@
 
   </head>
 
-  <body>
-    <header>
-      <nav>
-        {{#if loggedUser}}
-        <span>Olá, {{loggedUser.username}}</span>
-        <a href="/logout">Logout</a>
-        {{else}}
-        <a href="/">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#treatments">Treatments</a>
-        <a href="#contact">Contact</a>
-        <a href="/signup">Create your account</a>
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
-
-      <div class="text-header">
-        <h1>WE PRIORITY YOUR</h1>
-        <h2><b>NEW SMILE</b></h2>
-      </div>
-
-    </header>
+  <nav>
     <div class="container">
-      {{{body}}}
+      {{#if loggedUser}}
+      <span>Olá, {{loggedUser.username}}</span>
+      <a href="/logout">Logout</a>
+      {{else}}
+      <a href="/">Home</a>
+      <a href="/#about">About Us</a>
+      <a href="/#treatments">Treatments</a>
+      <a href="/#contact">Contact</a>
+      <a href="/signup">Create your account</a>
+      <a href="/login">Login</a>
+      {{/if}}
     </div>
-    <!--JavaScript at end of body for optimized loading-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script src="/javascript/index.js"></script>
-  </body>
+  </nav>
+
+  <div class="container">
+    {{{body}}}
+  </div>
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <script src="/javascript/index.js"></script>
+</body>
 
 </html>
 
