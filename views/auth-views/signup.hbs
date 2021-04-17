@@ -33,6 +33,12 @@
             </div>
             {{/if}}
         </div>
+        {{#if user.role}}
+        <div>
+            <input type="checkbox" id="role" name="dentist" checked>
+            <label for="scales">Dentista</label>
+        </div>
+        {{/if}}
 
         {{#if errorMessage}}
         <div>
