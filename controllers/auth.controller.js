@@ -1,31 +1,53 @@
-const { isUserExists, isPasswordRigth } = require('../validations/auth.validations');
-const passwordManager = require('../utils/passwordManager');
+const {
+  isUserExists,
+  isPasswordRight,
+} = require("../validations/auth.validations");
+const passwordManager = require("../utils/passwordManager");
 const isAuthDentist = require("../middlewares/verifyAuthDentist.middlewar");
 
-const { Patient, Dentist } = require('../models/Users.model');
+const { Patient, Dentist } = require("../models/Users.model");
 
 class AuthController {
-  static async _buildNewUser(req) {
-    const isDentist = !!req.user.role;
+  static async _buildNewUser(req, res, isDentist) {
+    /* const isDentist = !!req.user.role; */
     const { userEmail: email, password, userName: name } = req.body;
+    console.log(req.body);
 
-    const ecryptPassword = await passwordManager.encryptPassword(password);
-    let newUser = { name, email, ecryptPassword };
+    const encryptPassword = await passwordManager.encryptPassword(password);
+    let newUser = { name, email, password: encryptPassword };
+    console.log(newUser);
 
-    if (isUserExists(email)) return res.render("auth-views/signup", { errorMessage: "Nome de usuário já existe. Por favor, escolha outro" });
+    if (await isUserExists(email)) {
+      res.render("auth-views/signup", {
+        errorMessage: "Email já existe. Por favor, escolha outro",
+      });
+      return null;
+    }
 
-    return isDentist ? { ...newUser, cro: req.body.cro, specialty: req.body.specialty ? req.body.specialty : '', role: req.user.role } : newUser;
+    return isDentist
+      ? {
+          ...newUser,
+          cro: req.body.cro,
+          specialty: req.body.specialty ? req.body.specialty : "",
+          role: "dentist",
+        }
+      : newUser;
   }
 
-  static async postCreateNewUser(req, res) {
+  static async postCreateNewUser(req, res, next) {
+    console.log(req.user);
     try {
-      const newUser = await this._buildNewUser(req);
+      const newUser = await AuthController._buildNewUser(req, res, false);
+      if (!newUser) {
+        return;
+      }
+      console.log(newUser);
+      /* const isDentist = !!req.user.role; */
 
-      const isDentist = !!req.user.role;
+      /* isDentist ? await Dentist.create(newUser) : await Patient.create(newUser); */
+      await Patient.create(newUser);
 
-      isDentist ? await Dentist.create(newUser) : await Patient.create(newUser);
-
-      return res.redirect('/login');
+      return res.redirect("/login");
     } catch (error) {
       return next(error);
     }
@@ -33,14 +55,22 @@ class AuthController {
 
   static async postLoginUser(req, res) {
     try {
-      const isDentist = !!req.user.role;
+      /* const isDentist = !!req.user.role; */
       const { userEmail, userPassword } = req.body;
 
-      if (!isUserExists(userEmail)) return res.render("auth-views/login", { errorMessage: 'Nome de usuário ou senha incorretos' });
+      if (!(await isUserExists(userEmail)))
+        return res.render("auth-views/login", {
+          errorMessage: "Nome de usuário ou senha incorretos",
+        });
 
-      const userFromDB = isDentist ? await Dentist.findOne({ email }) : await Patient.findOne({ email });
+      const userFromDB = isDentist
+        ? await Dentist.findOne({ email })
+        : await Patient.findOne({ email });
 
-      if (!isPasswordRigth(userPassword, userFromDB.password)) return res.render("auth-views/login", { errorMessage: 'Nome de usuário ou senha incorretos' });
+      if (!(await isPasswordRight(userPassword, userFromDB.password)))
+        return res.render("auth-views/login", {
+          errorMessage: "Nome de usuário ou senha incorretos",
+        });
 
       req.session.currentUser = userFromDB;
 
@@ -57,12 +87,14 @@ class AuthController {
       req = {
         ...req,
         user: {
-          role: 'dentist',
-        }
+          role: "dentist",
+        },
       };
 
-      return res.render("auth-views/signup")
-    }
+      return res.redirect("/dentist/signup");
+   //mesma view que o paciente se cadastra. Precisa ter rota separada
+  }
+  console.log(res.body)
 
     return res.render("auth-views/dentistAuth", {
       error: "Senha de acesso incorreta",
