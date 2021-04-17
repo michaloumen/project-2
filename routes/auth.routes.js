@@ -14,8 +14,6 @@ router.get("/login/:userType", (req, res, next) => {
 });
 router.post("/login/:userType", AuthController.postLoginUser);
 
-// router.get("/login", (req, res) => res.render("auth-views/login")
-// router.post("/login", AuthController.postLoginUser);
 
 router.get("/logout", (req, res) => {
   req.session.destroy();
