@@ -1,6 +1,6 @@
 const {
   isUserExists,
-  isPasswordRigth,
+  isPasswordRight,
 } = require("../validations/auth.validations");
 const passwordManager = require("../utils/passwordManager");
 const isAuthDentist = require("../middlewares/verifyAuthDentist.middlewar");
@@ -67,7 +67,7 @@ class AuthController {
         ? await Dentist.findOne({ email })
         : await Patient.findOne({ email });
 
-      if (!isPasswordRigth(userPassword, userFromDB.password))
+      if (!(await isPasswordRight(userPassword, userFromDB.password)))
         return res.render("auth-views/login", {
           errorMessage: "Nome de usuário ou senha incorretos",
         });
@@ -91,8 +91,10 @@ class AuthController {
         },
       };
 
-      return res.redirect("/dentist/signup"); //mesma view que o paciente se cadastra. Precisa ter rota separada
-    }
+      return res.redirect("/dentist/signup");
+   //mesma view que o paciente se cadastra. Precisa ter rota separada
+  }
+  console.log(res.body)
 
     return res.render("auth-views/dentistAuth", {
       error: "Senha de acesso incorreta",

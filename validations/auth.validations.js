@@ -7,7 +7,7 @@ module.exports = {
     console.log(response);
     return !!response;
   },
-  isPasswordPatientRigth: (userPassword, passwordFromDB) => {
+  isPasswordRight: (userPassword, passwordFromDB) => {
     return !!bcrypt.compareSync(userPassword, passwordFromDB);
   },
 };

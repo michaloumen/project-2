@@ -9,9 +9,8 @@ router.get("/dentist/signup", (req, res) =>
 );
 router.post("/dentist/auth/signup", AuthController.authDentistRouteSignUp); 
 
-
-router.get("/dentist/signup" ) ///rota para o signup do dentista /
-/* router.post("/dentist/signup") /rota para cadastrar dentista*/ 
+router.get("/dentist/signup") ///rota para o signup do dentista /
+/* router.post("/dentist/signup")   *////rota para cadastrar dentista*/ 
 
 router.get("/login", (req, res) => res.render("auth-views/login")
 );
