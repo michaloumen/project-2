@@ -71,6 +71,55 @@ body > .container {
   line-height: 1.2;
 }
 
+.form-auth-container {
+  width: 100%;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-auth {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-auth > div + div {
+  margin-top: 20px;
+}
+
+.form-auth label {
+  display: block;
+}
+
+.form-auth input {
+  width: 350px;
+  height: 50px;
+  border: 1px solid #25291c;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.form-auth button {
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  background-color: #5c77ff;
+  color: aliceblue;
+  margin-top: 20px;
+}
+
+.form-auth button:hover {
+  background-color: #008000;
+  transition: background-color 0.5s, color 0.5s;
+}
+
 .about-block {
   padding-top: 90px;
 }
@@ -171,7 +220,6 @@ body > .container {
 }
 
 #treatments {
-  padding-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,7 +229,7 @@ body > .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 90px 20px 20px 20px;
   background: #b8ebd0ff;
 }
 
@@ -215,56 +263,6 @@ body > .container {
   text-indent: 0;
 }
 
-.form-auth-container {
-  width: 100%;
-  height: calc(100vh - 120px);
-  /*   padding: 80px 50px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-auth {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-auth > div + div {
-  margin-top: 20px;
-}
-
-.form-auth label {
-  display: block;
-}
-
-.form-auth input {
-  width: 350px;
-  height: 50px;
-  border: 1px solid #25291c;
-  border-radius: 6px;
-  padding: 15px;
-}
-
-.form-auth button {
-  width: 350px;
-  height: 50px;
-  border: none;
-  border-radius: 6px;
-  font-size: 18px;
-  background-color: #5c77ff;
-  color: aliceblue;
-  margin-top: 20px;
-}
-
-.form-auth button:hover {
-  background-color: #008000;
-  transition: background-color 0.5s, color 0.5s;
-}
-
 #photo-parallax-2 {
   background: url("https://images.pexels.com/photos/305567/pexels-photo-305567.jpeg?cs=srgb&dl=pexels-daniel-frank-305567.jpg&fm=jpg")
     no-repeat center center fixed;
@@ -294,13 +292,9 @@ body > .container {
   width: 100%;
 }
 
-.column {
-  float: left;
-  width: 33.33%;
-  /* padding: 10px; */
-  /*   padding-top: 50px;
-  padding-bottom: 50px; */
-  /*  box-sizing: border-box; */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 .row::after {
@@ -309,9 +303,18 @@ body > .container {
   clear: both;
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.column > p {
+  font-size: 15px;
+}
+
+.column1 {
+  padding-left: 110px;
+  width: 100%;
 }
 
 .column1 > h2 {
@@ -322,15 +325,6 @@ body > .container {
 
 .column1 > h3 {
   font-family: "Homemade Apple", cursive;
-  font-size: 15px;
-}
-
-.column1 {
-  padding-left: 110px;
-  width: 100%;
-}
-
-.column > p {
   font-size: 15px;
 }
 
@@ -345,6 +339,14 @@ iframe {
   height: 300px;
 }
 
+th {
+  font-weight: lighter;
+}
+
+.column3 {
+  width: 100%;
+}
+
 .column3 > h1 {
   font-size: 25px;
   font-weight: bold;
@@ -355,12 +357,4 @@ iframe {
 .column3 > table {
   width: 200px;
   font-size: 12px;
-}
-
-th {
-  font-weight: lighter;
-}
-
-.column3 {
-  width: 100%;
 }

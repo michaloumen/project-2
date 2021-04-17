@@ -7,9 +7,14 @@ router.post("/signup", AuthController.postCreateNewUser);
 router.get("/dentist/signup", (req, res) =>
   res.render("auth-views/dentistAuth")
 );
-router.post("/dentist/signup", AuthController.authDentistRouteSignUp);
+router.post("/dentist/auth/signup", AuthController.authDentistRouteSignUp); 
 
-router.get("/login", (req, res) => res.render("auth-views/login"));
+
+router.get("/dentist/signup" ) ///rota para o signup do dentista /
+/* router.post("/dentist/signup") /rota para cadastrar dentista*/ 
+
+router.get("/login", (req, res) => res.render("auth-views/login")
+);
 router.post("/login", AuthController.postLoginUser);
 
 router.get("/logout", (req, res) => {
