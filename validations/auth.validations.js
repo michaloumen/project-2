@@ -1,12 +1,14 @@
 const bcrypt = require("bcryptjs");
+const { Patient, Dentist } = require('../models/Users.model');
+
 
 module.exports = {
-  isUserExists: async (email) => {
-    const response = await User.findOne({ email });
+  isUserExists: async (email, isDentist) => {
+    const response = isDentist ? await Dentist.findOne({ email }) : Patient.findOne({ email });
 
     return !!response;
   },
-  isPasswordPatientRigth: (userPassword, passwordFromDB) => {
+  isPasswordRigth: (userPassword, passwordFromDB) => {
     return !!bcrypt.compareSync(userPassword, passwordFromDB);
   },
 };
