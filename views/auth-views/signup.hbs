@@ -35,17 +35,29 @@
         </div>
 
         <div>
+        
+        {{#if user.role}}
+        <div>
+        {{!-- deixar isso não visível --}}
+
+        <input type="checkbox" id="role" name="dentist" checked>
+        <label for="scales">Dentista</label>
+        </div>
+
+        {{!-- colocar o campo de cro --}}
+        <div>
             <label for="cro">CRO</label>
-            <input type="text" name="cro" id="cro" placeholder="Enter your CRO" >
-            {{#if passwordError}}
+            <input type="text" name="cro" id="cro" placeholder="Enter your CRO number" required minlength="5"
+                maxlength="6">
+            {{#if errorError}}
             <div>
-                <span>{{passwordError}}</span>
+                <span>{{errorError}}</span>
             </div>
             {{/if}}
         </div>
+        {{/if}} 
 
-
-        {{#if errorMessage}}
+                {{#if errorMessage}}
         <div>
             <span>{{errorMessage}}</span>
         </div>
