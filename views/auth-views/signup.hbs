@@ -4,7 +4,7 @@
     <form class="form-auth" action="/signup" method="post">
         <div>
             <label for="userName">Username</label>
-            <input type="text" name="userName" id="userName" placeholder="Digite o seu nome completo" required
+            <input type="text" name="userName" id="userName" placeholder="Enter your full name" required
                 minlength="5" maxlength="50">
             {{#if userNameError}}
             <div>
@@ -24,8 +24,8 @@
         </div>
 
         <div>
-            <label for="passoword">Password</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha" required minlength="6"
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required minlength="6"
                 maxlength="50">
             {{#if passwordError}}
             <div>
@@ -33,6 +33,17 @@
             </div>
             {{/if}}
         </div>
+
+        <div>
+            <label for="cro">CRO</label>
+            <input type="text" name="cro" id="cro" placeholder="Enter your CRO" >
+            {{#if passwordError}}
+            <div>
+                <span>{{passwordError}}</span>
+            </div>
+            {{/if}}
+        </div>
+
 
         {{#if errorMessage}}
         <div>
