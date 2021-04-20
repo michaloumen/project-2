@@ -78,7 +78,6 @@ body > .container {
   position: relative;
   margin-top: 260px;
   margin-bottom: -90px;
-  /* top: 50%; */
   left: 50%;
   transform: translate(-50%,-50%);  
   background: url("https://www.xmple.com/wallpaper/linear-white-blue-gradient-1920x1080-c2-6495ed-ffffff-a-285-f-14.svg");
@@ -152,7 +151,7 @@ body > .container {
 }
 
 .about-block {
-  padding-top: 90px;
+  padding-top: 100px;
 }
 
 .about-block {
@@ -296,6 +295,14 @@ body > .container {
 
 .treatment1, .treatment2, .treatment3, .treatment4 {
   margin-top: -5rem;
+}
+
+.treatment1 {
+  padding-top: 150px;
+}
+
+.treatment4 {
+  padding-bottom: 150px;
 }
 
 #photo-parallax-2 {
