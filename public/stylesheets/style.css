@@ -22,6 +22,7 @@ nav {
   justify-content: flex-end;
   position: fixed;
   top: 0;
+  white-space: nowrap;
 }
 
 .container > a {
@@ -72,12 +73,35 @@ body > .container {
 }
 
 .form-auth-container {
-  width: 100%;
-  height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 300px;
+  padding: 40px;
+  position: relative;
+  margin-top: 260px;
+  margin-bottom: -90px;
+  /* top: 50%; */
+  left: 50%;
+  transform: translate(-50%,-50%);  
+  background: url("https://www.xmple.com/wallpaper/linear-white-blue-gradient-1920x1080-c2-6495ed-ffffff-a-285-f-14.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.signup {
+  margin-top: 400px;
+  margin-bottom: -240px;
+}
+
+.login {
+  margin-top: 370px;
+  margin-bottom: -190px;
+}
+
+.form-auth-container > h1 {
+  font-family: 'Bebas Neue', cursive;
+  color:cornflowerblue;
+  font-size: 50px;
+  /* margin-left: -20rem; */
 }
 
 .form-auth {
@@ -94,25 +118,32 @@ body > .container {
 
 .form-auth label {
   display: block;
+  color: #25291c;
 }
 
-.form-auth input {
-  width: 350px;
-  height: 50px;
-  border: 1px solid #25291c;
+::placeholder{
+  color: #c33c54ff;
+  font-size: 10px;
+}
+
+/* .form-auth input {
+  width: 481px;
+  height: 40px;
   border-radius: 6px;
   padding: 15px;
-}
+}  */
 
 .form-auth button {
-  width: 350px;
+  text-align: center;
+  width: 150px;
   height: 50px;
   border: none;
   border-radius: 6px;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #5c77ff;
   color: aliceblue;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .form-auth button:hover {
@@ -131,21 +162,21 @@ body > .container {
 }
 
 .about-block > p {
-  padding-top: 5rem;
-  padding-right: 8rem;
-  padding-left: 8rem;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.5;
   color: #25291cff;
+  padding: 0 60px;
+  
 }
 
 .about-block > p + p {
-  padding-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .about-block > h1 {
   font-weight: lighter;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.5;
   color: #25291cff;
   text-align: center;
@@ -153,7 +184,7 @@ body > .container {
 
 .about-block > h2 {
   font-weight: bolder;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.5;
   color: #25291cff;
   text-align: center;
@@ -169,8 +200,8 @@ body > .container {
 .about-row {
   display: block;
   min-height: 1px;
-  margin: 60px;
-  margin-left: 15rem;
+  margin: 40px;
+/*   margin-left: 15rem; */
 }
 
 .about-row:after {
@@ -180,9 +211,9 @@ body > .container {
 }
 
 .about-column {
-  width: 40%;
+  width: 50%;
   float: left;
-  padding: 0 5%;
+  padding: 0 4%;
   font-size: 15px;
 }
 
@@ -192,7 +223,7 @@ body > .container {
 }
 
 .about-column > h2 {
-  font-size: 30px;
+  font-size: 20px;
   text-indent: 0;
   font-weight: bold;
 }
@@ -201,7 +232,7 @@ body > .container {
   background: url("https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
     no-repeat center center fixed;
   background-size: cover;
-  height: calc(80vh - 110px);
+  height: calc(90vh - 110px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -215,7 +246,7 @@ body > .container {
   text-align: center;
   font-size: 100px;
   color: #25291cff;
-  margin-top: 140px;
+  margin-top: 100px;
   line-height: 1.5;
 }
 
@@ -229,7 +260,7 @@ body > .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 90px 20px 20px 20px;
+  padding: 40px 0px 60px 20px;
   background: #b8ebd0ff;
 }
 
@@ -243,7 +274,7 @@ body > .container {
   width: 350px;
   height: auto;
   box-shadow: 0px 2px 20px 0 black;
-  margin-right: 20px;
+  margin-right: 45px;
 }
 
 .treatment-text > h1 {
@@ -261,6 +292,10 @@ body > .container {
   color: #25291cff;
   line-height: 1.5;
   text-indent: 0;
+}
+
+.treatment1, .treatment2, .treatment3, .treatment4 {
+  margin-top: -5rem;
 }
 
 #photo-parallax-2 {
@@ -281,7 +316,7 @@ body > .container {
   text-align: center;
   font-size: 100px;
   color: #25291cff;
-  margin-top: 140px;
+  margin-top: 100px;
   line-height: 1.5;
 }
 
@@ -334,9 +369,10 @@ body > .container {
 }
 
 iframe {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 80%;
   height: 300px;
+  margin-left: -3rem;
 }
 
 th {

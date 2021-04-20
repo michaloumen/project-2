@@ -1,14 +1,15 @@
-<main class="form-auth-container">
-    <h1>Faça o login</h1>
+
+<main class="form-auth-container login">
+    <h1>Login</h1>
 
     <form class="form-auth" action="/login/patient" method="post">
         <div>
-            <label for="userEmail">Nome de usuário</label>
+            <label for="userEmail">Email</label>
             <input type="text" name="userEmail" id="userEmail" placeholder="Digite o seu nome de usuário">
         </div>
 
         <div>
-            <label for="userPassword">Senha</label>
+            <label for="userPassword">Password</label>
             <input type="password" name="userPassword" id="userPassword" placeholder="Digite sua senha">
         </div>
 
@@ -18,6 +19,6 @@
         </div>
         {{/if}}
 
-        <button type="submit">Logar</button>
+        <button type="submit">Submit</button>
     </form>
 </main>
