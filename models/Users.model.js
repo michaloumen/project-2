@@ -1,6 +1,7 @@
 const extendSchema = require('mongoose-extend-schema');
 const { Schema, model, Types } = require("mongoose");
 
+const schedule = require('./types/schedule.types');
 
 const UserSchema = new Schema(
   {
@@ -17,7 +18,6 @@ const UserSchema = new Schema(
   }
 );
 
-
 const patientSchema = extendSchema(UserSchema, {
   dentist: { type: [Types.ObjectId], ref: 'Dentist' },
   returnDate: { type: Date },
@@ -26,9 +26,10 @@ const patientSchema = extendSchema(UserSchema, {
 const destistSchema = extendSchema(UserSchema, {
   cro: { type: Number, required: true },
   specialty: { type: [String] },
+  scheduleAvailability: { type: [Object], schedule },
 });
 
 const Dentist = model('Dentist', destistSchema);
 const Patient = model('Patient', patientSchema);
 
-module.exports = { Patient, Dentist }
+module.exports = { Patient, Dentist };
