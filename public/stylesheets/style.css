@@ -97,6 +97,11 @@ body > .container {
   margin-bottom: -190px;
 }
 
+.login-dentist {
+  margin-top: 350px;
+  margin-bottom: -190px;
+}
+
 .form-auth-container > h1 {
   font-family: 'Bebas Neue', cursive;
   color:cornflowerblue;
