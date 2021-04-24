@@ -11,7 +11,7 @@ const userSessionValidationMiddleware = require("./middlewares/userSessionValida
 const index = require("./routes/index.routes");
 const authRoutes = require("./routes/auth.routes");
 const schedule = require("./routes/schedule.routes");
-const profile = require("./routes/profile.routes");
+const dentist = require("./routes/dentist.routes");
 
 // require database configuration
 require("./configs/db.config");
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", index);
 app.use("/", authRoutes);
 app.use("/agenda", schedule);
-app.use("/profile", profile);
+app.use("/dentist", dentist);
 app.use(userSessionValidationMiddleware);
 
 module.exports = app;
