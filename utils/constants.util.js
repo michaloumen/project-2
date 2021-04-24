@@ -50,5 +50,14 @@ module.exports = Object.freeze({
     'Quinta-feira': 4,
     'Sexta-feira': 5,
     Sábado: 6,
+  },
+  WEEK_DAYS_NUMBERS: {
+    0: 'Domingo',
+    1: 'Segunda-feira',
+    2: 'Terça-feira',
+    3: 'Quarta-feira',
+    4: 'Quinta-feira',
+    5: 'Sexta-feira',
+    6: 'Sábado',
   }
 });

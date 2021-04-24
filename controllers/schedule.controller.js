@@ -25,11 +25,12 @@ class ScheduleController {
     let newAppointment = {
       dentist,
       weekDay,
+      patient: req.session.currentUser,
       date: new Date(year, monthShort, day),
       time: timeSchedule,
     }
 
-    if (!!req.session.currentUser) {
+    if (!req.session.currentUser) {
       const { userName, userEmail, userPhone } = req.body;
 
       if (emailValidation(userEmail) > 0) return res.render('schedule', { userEmailError: emailValidation(userEmail) });
@@ -49,11 +50,6 @@ class ScheduleController {
       }
     }
 
-    newAppointment = {
-      ...newAppointment,
-      patient: req.session.currentUser
-    }
-
     try {
       const response = await ScheduleModel.create(newAppointment);
 
@@ -66,8 +62,9 @@ class ScheduleController {
       await UserService.updateDateAvailable(response.dentist, dateAvailable);
 
       const textSuccess = `Consulta marcada para ${dateSchedule} às ${timeSchedule}`
+      const dentist = await UserService.searchAllUsers(true);
 
-      res.render('schedule', { textSuccess, isUserLogged: !req.session.currentUser, loggedUser: req.session.currentUser })
+      res.render('schedule', { textSuccess, isUserLogged: !req.session.currentUser, loggedUser: req.session.currentUser, dentist })
     } catch (error) {
       console.log('error in ScheduleController.createNewAppointment : ', error)
     }

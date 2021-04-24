@@ -13,7 +13,7 @@ module.exports = (app) => {
         path: "/",
         sameSite: false,
         httpOnly: true,
-        maxAge: 60000,
+        maxAge: 18000000,
       },
       store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI,

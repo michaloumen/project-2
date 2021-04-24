@@ -1,7 +1,7 @@
 const userSessionValidationMiddleware = (req, res, next) => {
   if (req.session.currentUser) return next();
 
-  res.redirect("/login/patient");
+  res.redirect("/login/dentist");
 };
 
 module.exports = userSessionValidationMiddleware;

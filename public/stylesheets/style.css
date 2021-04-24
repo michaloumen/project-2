@@ -456,3 +456,7 @@ th {
   background-color:seagreen;
   transition: background-color 0.5s, color 0.5s;
 }
+
+.input__id--disabled {
+  display: none;
+}
