@@ -1,0 +1,13 @@
+<main class="form-auth-container">
+  <form class="form-auth" action="/dentist/auth/signup" method="post">
+    <div>
+      <label for="password">Senha</label>
+      <input type="password" name="passwordSite" id="passwordSite" placeholder="Digite a senha">
+      {{#if error}}
+        <p>{{error}}</p>
+      {{/if}}
+    </div>
+
+    <button type="submit">Logar</button>
+  </form>
+</main>

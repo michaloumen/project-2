@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orelega+One&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  text-indent: 2em;
+  line-height: 1.5;
+  color: #25291c;
+}
+
+nav {
+  height: 90px;
+  width: 100%;
+  background-color: rgba(255, 255, 255);
+  padding: 0 90px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  white-space: nowrap;
+  z-index: +1;
+}
+
+.container > a {
+  text-decoration: none;
+  color: darkslategray;
+  font-size: 18px;
+}
+
+.container > a:hover {
+  color: #008000;
+  transition: color 0.5s;
+}
+
+.container > a + a {
+  margin-left: 50px;
+}
+
+body > .container {
+  margin-top: 90px;
+}
+
+.header {
+  background: url("https://post.healthline.com/wp-content/uploads/2019/08/friends-selfie-mixed-race-happy-1200x628-facebook.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: calc(90vh - 60px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.text-header > h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.text-header {
+  font-family: "Amatic SC", cursive;
+  color: aliceblue;
+  font-size: 50px;
+  margin-top: 250px;
+  margin-left: 130px;
+  line-height: 1.2;
+}
+
+.form-auth-container {
+  width: 300px;
+  padding: 40px;
+  position: relative;
+  margin-top: 260px;
+  margin-bottom: -90px;
+  left: 50%;
+  transform: translate(-50%,-50%);  
+  background: url("https://www.xmple.com/wallpaper/linear-white-blue-gradient-1920x1080-c2-6495ed-ffffff-a-285-f-14.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.signup {
+  margin-top: 400px;
+  margin-bottom: -240px;
+}
+
+.login {
+  margin-top: 370px;
+  margin-bottom: -190px;
+}
+
+.login-dentist {
+  margin-top: 350px;
+  margin-bottom: -190px;
+}
+
+.form-auth-container > h1 {
+  font-family: 'Bebas Neue', cursive;
+  color:cornflowerblue;
+  font-size: 50px;
+  /* margin-left: -20rem; */
+}
+
+.form-auth {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-auth > div + div {
+  margin-top: 20px;
+}
+
+.form-auth label {
+  display: block;
+  color: #25291c;
+}
+
+::placeholder{
+  color: #c33c54ff;
+  font-size: 10px;
+}
+
+/* .form-auth input {
+  width: 481px;
+  height: 40px;
+  border-radius: 6px;
+  padding: 15px;
+}  */
+
+.form-auth button {
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #5c77ff;
+  color: aliceblue;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-auth button:hover {
+  background-color: #008000;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.about-block {
+  padding-top: 100px;
+}
+
+.about-block {
+  background-color: #ece8d9;
+  padding-bottom: 10rem;
+  margin-bottom: -10rem;
+}
+
+.about-block > p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #25291cff;
+  padding: 0 60px;
+  
+}
+
+.about-block > p + p {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.about-block > h1 {
+  font-weight: lighter;
+  font-size: 30px;
+  line-height: 1.5;
+  color: #25291cff;
+  text-align: center;
+}
+
+.about-block > h2 {
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 1.5;
+  color: #25291cff;
+  text-align: center;
+  line-height: 0;
+}
+
+.about-block > img {
+  border-radius: 50%;
+  width: 20%;
+  align-items: center;
+}
+
+.about-row {
+  display: block;
+  min-height: 1px;
+  margin: 40px;
+/*   margin-left: 15rem; */
+}
+
+.about-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.about-column {
+  width: 50%;
+  float: left;
+  padding: 0 4%;
+  font-size: 15px;
+}
+
+.about-column > img {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.about-column > h2 {
+  font-size: 20px;
+  text-indent: 0;
+  font-weight: bold;
+}
+
+#photo-parallax {
+  background: url("https://images.pexels.com/photos/305565/pexels-photo-305565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: calc(90vh - 110px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#photo-parallax > h1 {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 100px;
+  color: #25291cff;
+  margin-top: 100px;
+  line-height: 1.5;
+}
+
+#treatments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.types-of-treatment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0px 60px 20px;
+  background: #b8ebd0ff;
+}
+
+.treatment-image > img {
+  width: 350px;
+  height: auto;
+  box-shadow: 0px 2px 20px 0 black;
+}
+
+.treatment-image-inverted > img {
+  width: 350px;
+  height: auto;
+  box-shadow: 0px 2px 20px 0 black;
+  margin-right: 45px;
+}
+
+.treatment-text > h1 {
+  font-size: 20px;
+  color: #25291cff;
+  font-weight: bold;
+}
+
+.treatment-text {
+  font-size: 15px;
+  padding: 3rem 3rem 3rem 6rem;
+  place-self: center;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #25291cff;
+  line-height: 1.5;
+  text-indent: 0;
+}
+
+.treatment1, .treatment2, .treatment3, .treatment4 {
+  margin-top: -5rem;
+}
+
+.treatment1 {
+  padding-top: 150px;
+}
+
+.treatment4 {
+  padding-bottom: 150px;
+}
+
+#photo-parallax-2 {
+  background: url("https://images.pexels.com/photos/305567/pexels-photo-305567.jpeg?cs=srgb&dl=pexels-daniel-frank-305567.jpg&fm=jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: calc(80vh - 110px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#photo-parallax-2 > h1 {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 100px;
+  color: #25291cff;
+  margin-top: 100px;
+  line-height: 1.5;
+}
+
+#contact {
+  background-color: /* #5c77ffff */ cornflowerblue;
+  padding: 30px 50px;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.column > p {
+  font-size: 15px;
+}
+
+.column1 {
+  padding-left: 110px;
+  width: 100%;
+}
+
+.column1 > h2 {
+  font-family: "Homemade Apple", cursive;
+  font-size: 30px;
+  line-height: 0;
+}
+
+.column1 > h3 {
+  font-family: "Homemade Apple", cursive;
+  font-size: 15px;
+}
+
+.iframe {
+  width: 100%;
+  text-align: center;
+}
+
+iframe {
+  /* margin: 0 auto; */
+  width: 80%;
+  height: 300px;
+  margin-left: -3rem;
+}
+
+th {
+  font-weight: lighter;
+}
+
+.column3 {
+  width: 100%;
+}
+
+.column3 > h1 {
+  font-size: 25px;
+  font-weight: bold;
+  text-indent: 0;
+  margin-top: 0;
+}
+
+.column3 > table {
+  width: 200px;
+  font-size: 12px;
+}
+
+.calendar-title {
+  margin-top: 120px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-left: -25px;
+  font-size:24px;
+  width:104%;
+  height: 50px;
+  background-image: linear-gradient(-222deg, #00A887, #1eb497);
+  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+  color:#fff;
+} 
+
+.sort {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.calendar-patient:hover{
+  background-image: linear-gradient(-222deg, #b8ebd0ff, #1eb497);
+  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+}
+
+.em-tooth {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.edit-item-btn, .remove-item-btn, #add-btn, #edit-btn {
+  text-align: center;
+  width: 65px;
+  height: 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #B8EBD0;
+  color:darkslategray;
+}
+
+.edit-item-btn:hover, .remove-item-btn:hover, #add-btn:hover, #edit-btn:hover{
+  background-color:seagreen;
+  transition: background-color 0.5s, color 0.5s;
+}

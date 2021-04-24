@@ -1,0 +1,23 @@
+<main class="form-auth-container login-dentist">
+    <h1>LOGIN</h1>
+
+    <form class="form-auth" action="/login/dentist" method="post">
+        <div>
+            <label for="userEmail">Email</label>
+            <input type="text" name="userEmail" id="userEmail" placeholder="Enter your email">
+        </div>
+
+        <div>
+            <label for="userPassword">Password</label>
+            <input type="password" name="userPassword" id="userPassword" placeholder="Enter your password">
+        </div>
+
+        {{#if errorMessage}}
+        <div>
+            <span>{{errorMessage}}</span>
+        </div>
+        {{/if}}
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
