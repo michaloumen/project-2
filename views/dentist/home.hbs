@@ -29,8 +29,7 @@
         <td class="name">{{this.patient.name}}</td>
         <td class="informations">{{this.weekDay}}, {{this.date}}</td>
         <td class="remove">
-          <form action="/test" method="post">
-            <input tip class="input__id--disabled" value="{{this._id}}" name="scheduleId" />
+          <form action="/dentist/delete/{{this.id}}" method="POST">
             <button type="submit" class="remove-item-btn">Remove</button>
           </form>
         </td>

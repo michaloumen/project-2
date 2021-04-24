@@ -11,6 +11,15 @@ class ScheduleService {
       console.log('Erro in ScheduleService.searchScheduleByUser: ', error)
     }
   }
+
+  async deleteScheduleById(id) {
+    try {
+      await Schedule.deleteOne({ _id: id });
+
+    } catch (error) {
+      console.log('Erro in ScheduleService.deleteScheduleById: ', error)
+    }
+  }
 }
 
 module.exports = new ScheduleService();
