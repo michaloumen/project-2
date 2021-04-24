@@ -1,8 +1,9 @@
 
 const router = require("express").Router();
-const AuthController = require("../controllers/auth.controller");
+const ScheduleController = require("../controllers/schedule.controller");
 
-router.get("/", (req, res) => res.render("datePicker"));
+router.get("/", ScheduleController.renderSchedule);
+router.post("/", ScheduleController.createNewAppointment);
 
 
 module.exports = router;
