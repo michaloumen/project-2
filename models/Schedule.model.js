@@ -1,10 +1,11 @@
 const { Schema, model, Types } = require("mongoose");
 
 const scheduleSchema = new Schema({
-  dentist: { type: Types.ObjectId, ref: 'Dentist' },
+  dentist: { type: Types.ObjectId, ref: 'Dentist', required: true },
   patient: { type: Types.ObjectId, ref: 'Patient' },
-  date: { type: Date },
-  type: { type: String }
+  weekDay: { type: Number, required: true },
+  date: { type: Date, required: true },
+  time: { type: String, required: true }
 });
 
 const Schedule = model('Schedule', scheduleSchema);
