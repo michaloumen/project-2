@@ -42,7 +42,7 @@ class ScheduleController {
       }
 
       const patient = isUserExists(userEmail, false) ? await UserService.searchUserByEmail(userEmail, false) : await UserService.createNewUser(body);
-
+      console.log('patient ---> ', patient);
       newAppointment = {
         ...newAppointment,
         patient: patient._id
