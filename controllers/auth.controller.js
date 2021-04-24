@@ -5,7 +5,7 @@ const {
 const passwordManager = require("../utils/passwordManager");
 const isAuthDentist = require("../utils/isAuthDentist.utils");
 
-const { Patient, Dentist } = require("../models/Users.model");
+const UserService = require('../service/user.service');
 
 class AuthController {
   static async _buildNewUser(req, res, isDentist) {
@@ -14,7 +14,7 @@ class AuthController {
     const encryptPassword = await passwordManager.encryptPassword(password);
     let newUser = { name, email, password: encryptPassword };
 
-    if (!(await isUserExists(email, isDentist))) {
+    if (!!(await isUserExists(email, isDentist))) {
       return null;
     }
 
@@ -40,7 +40,7 @@ class AuthController {
         });
       }
 
-      isDentist ? await Dentist.create(newUser) : await Patient.create(newUser);
+      await UserService.createNewUser(newUser, isDentist);
 
       return isDentist ? res.redirect("/login/dentist") : res.redirect("/login/patient");
     } catch (error) {
@@ -56,20 +56,13 @@ class AuthController {
     try {
       const { userEmail: email, userPassword } = req.body;
 
-      if (!(await isUserExists(email, isDentist))) {
-        console.log('entrei no if do emeil')
-
+      if (!!(await isUserExists(email, isDentist))) {
         return res.render("auth-views/login", {
           errorMessage: "Nome de usuário ou senha incorretos",
         });
       }
 
-      const userFromDB = isDentist
-        ? await Dentist.findOne({ email })
-        : await Patient.findOne({ email });
-
-      console.log('userFromDB ---> ', userFromDB);
-
+      const userFromDB = await UserService.searchUserByEmail(email, isDentist);
       if (!isPasswordRigth(userPassword, userFromDB.password)) {
         return isDentist ?
           res.render("auth-views/login-dentist", {

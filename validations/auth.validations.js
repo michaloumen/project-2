@@ -1,10 +1,11 @@
 const bcrypt = require("bcryptjs");
-const { Patient, Dentist } = require('../models/Users.model');
+const UserService = require('../service/user.service');
 
 
 module.exports = {
   isUserExists: async (email, isDentist) => {
-    const response = isDentist ? await Dentist.findOne({ email }) : await Patient.findOne({ email });
+    const response = await UserService.searchUserByEmail(email, isDentist);
+
     return !!response;
   },
   isPasswordRigth: (userPassword, passwordFromDB) => {
