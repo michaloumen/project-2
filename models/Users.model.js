@@ -1,11 +1,12 @@
 const extendSchema = require('mongoose-extend-schema');
 const { Schema, model, Types } = require("mongoose");
 
+const scheduleAvailability = require('./types/scheduleAvailability.types');
+const dateAvailable = require('./types/dateAvailable.type');
 
 const UserSchema = new Schema(
   {
     name: { type: String, required: true, minlength: 3, maxlength: 50 },
-    password: { type: String, required: true },
     birthDate: { type: Date },
     adress: { type: String },
     email: { type: String, required: true },
@@ -17,18 +18,21 @@ const UserSchema = new Schema(
   }
 );
 
-
 const patientSchema = extendSchema(UserSchema, {
+  password: { type: String },
   dentist: { type: [Types.ObjectId], ref: 'Dentist' },
   returnDate: { type: Date },
 });
 
 const destistSchema = extendSchema(UserSchema, {
-  cro: { type: Number, required: true },
+  password: { type: String, required: true },
+  cro: { type: Number },
   specialty: { type: [String] },
+  scheduleAvailability: { type: [Object], scheduleAvailability },
+  dateAvailable: { type: [Object], dateAvailable },
 });
 
 const Dentist = model('Dentist', destistSchema);
 const Patient = model('Patient', patientSchema);
 
-module.exports = { Patient, Dentist }
+module.exports = { Patient, Dentist };
