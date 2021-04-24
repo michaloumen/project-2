@@ -1,55 +1,55 @@
 <main class="form-auth-container">
-    <h1>Preencha os seus dados</h1>
+  <h1>Preencha os seus dados</h1>
 
-    <form class="form-auth" action="/signup" method="post">
-        <div>
-            <label for="userName">Nome de usuário</label>
-            <input type="text" name="userName" id="userName" placeholder="Digite o seu nome completo" required
-                minlength="5" maxlength="50">
-            {{#if userNameError}}
-            <div>
-                <span>{{userNameError}}</span>
-            </div>
-            {{/if}}
-        </div>
-        <div>
-            <label for="userEmail">Email</label>
-            <input type="email" name="userEmail" id="userEmail" placeholder="email@email.com" required minlength="5"
-                maxlength="50">
-            {{#if userEmailError}}
-            <div>
-                <span>{{userEmailError}}</span>
-            </div>
-            {{/if}}
-        </div>
+  <form class="form-auth" action="/signup" method="post">
+    <div>
+      <label for="userName">Nome</label>
+      <input type="text" name="userName" id="userName" placeholder="Digite o seu nome completo" required minlength="5"
+        maxlength="50">
+      {{#if userNameError}}
+      <div>
+        <span>{{userNameError}}</span>
+      </div>
+      {{/if}}
+    </div>
+    <div>
+      <label for="userEmail">Email</label>
+      <input type="email" name="userEmail" id="userEmail" placeholder="email@email.com" required minlength="5"
+        maxlength="50">
+      {{#if userEmailError}}
+      <div>
+        <span>{{userEmailError}}</span>
+      </div>
+      {{/if}}
+    </div>
 
-        <div>
-            <label for="passoword">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha" required minlength="6"
-                maxlength="50">
-            {{#if passwordError}}
-            <div>
-                <span>{{passwordError}}</span>
-            </div>
-            {{/if}}
-        </div>
-        {{#if user.role}}
-        <div>
-            {{!-- deixar isso não visível --}}
+    <div>
+      <label for="passoword">Senha</label>
+      <input type="password" name="password" id="password" placeholder="Digite sua senha" required minlength="6"
+        maxlength="50">
+      {{#if passwordError}}
+      <div>
+        <span>{{passwordError}}</span>
+      </div>
+      {{/if}}
+    </div>
+    {{#if user.role}}
+    <div>
+      {{!-- deixar isso não visível --}}
 
-            <input type="checkbox" id="role" name="dentist" checked>
-            <label for="scales">Dentista</label>
-        </div>
+      <input type="checkbox" id="role" name="dentist" checked>
+      <label for="scales">Dentista</label>
+    </div>
 
-        {{!-- colocar o campo de cro --}}
-        {{/if}}
+    {{!-- colocar o campo de cro --}}
+    {{/if}}
 
-        {{#if errorMessage}}
-        <div>
-            <span>{{errorMessage}}</span>
-        </div>
-        {{/if}}
+    {{#if errorMessage}}
+    <div>
+      <span>{{errorMessage}}</span>
+    </div>
+    {{/if}}
 
-        <button type="submit">Cadastrar</button>
-    </form>
+    <button type="submit">Cadastrar</button>
+  </form>
 </main>
