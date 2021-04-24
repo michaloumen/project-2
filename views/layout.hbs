@@ -19,16 +19,14 @@
   <nav>
     <div class="container">
       {{#if loggedUser}}
-      <span>Olá, {{loggedUser.username}}</span>
       <a href="/logout">Logout</a>
-      {{else}}
+      {{/if}}
       <a href="/">Home</a>
       <a href="/#about">About Us</a>
       <a href="/#treatments">Treatments</a>
       <a href="/#contact">Contact</a>
       <a href="/signup">Create your account</a>
       <a href="/login">Login</a>
-      {{/if}}
     </div>
   </nav>
 
