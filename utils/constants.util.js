@@ -28,4 +28,27 @@ module.exports = Object.freeze({
     '20:30',
   ],
   WEEK_DAYS: [0, 1, 2, 3, 4, 5, 6],
+  MONTHS: {
+    Janeiro: 0,
+    Fevereiro: 1,
+    Março: 2,
+    Abril: 3,
+    Maio: 4,
+    Junho: 5,
+    Julho: 6,
+    Agosto: 7,
+    Setembro: 8,
+    Outubro: 9,
+    Novembro: 10,
+    Dezembro: 11,
+  },
+  WEEK_DAYS_STRING: {
+    Domingo: 0,
+    'Segunda-feira': 1,
+    'Terça-feira': 2,
+    'Quarta-feira': 3,
+    'Quinta-feira': 4,
+    'Sexta-feira': 5,
+    Sábado: 6,
+  }
 });
