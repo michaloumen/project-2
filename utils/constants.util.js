@@ -1,5 +1,5 @@
 module.exports = Object.freeze({
-  TIME: [
+  WORK_TIME: [
     '08:00',
     '08:30',
     '09:00',
@@ -27,5 +27,5 @@ module.exports = Object.freeze({
     '20:00',
     '20:30',
   ],
-  WEEKDAYS: [0, 1, 2, 3, 4, 5, 6],
+  WEEK_DAYS: [0, 1, 2, 3, 4, 5, 6],
 });
