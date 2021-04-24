@@ -41,13 +41,24 @@ class UserService {
 
   async createNewUser(body, isDentist) {
     try {
-      isDentist ?
+      const response = isDentist ?
         await Dentist.create(body)
         :
         await Patient.create(body);
 
+      return response;
     } catch (error) {
       console.log('Error in method UserService.createNewUser: ', error);
+    }
+  }
+
+  async updateDateAvailable(id, body) {
+    try {
+      const response = await Dentist.findByIdAndUpdate(id, { dateAvailable: body })
+
+      return response;
+    } catch (error) {
+      console.log('Error in method UserService.editUser: ', error);
     }
   }
 }
