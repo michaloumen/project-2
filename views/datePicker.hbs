@@ -1,5 +1,17 @@
 <div class="row">
-  <div class="col s6">
-    <input type="text" class="datepicker">
+  <div class="input-field col s12">
+    <form action="/test" method="POST">
+      <div>
+        <label>Data</label>
+        <input name="date-schedule" type="text" class="datepicker">
+      </div>
+      <div>
+        <label>Horário</label>
+        <select class="timer" name="time-schedule">
+          <option value="" disabled selected> Escolha um horário</option>
+        </select>
+      </div>
+      <button type="submit">enviar</button>
+    </form>
   </div>
 </div>
