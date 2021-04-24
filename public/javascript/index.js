@@ -1,5 +1,7 @@
+let dateSelect, timeSelect;
 $(document).ready(function () {
   $('.datepicker').datepicker({
+    showDaysInNextAndPreviousMonths: true,
     showMonthAfterYear: false,
     format: 'dddd, dd mmmm yyyy',
     disableDayFn: (date) => {
@@ -21,9 +23,22 @@ $(document).ready(function () {
       cancel: 'Cancelar',
       close: 'Fechar',
     },
-    // Formato da data que aparece no input
+    onSelect: function (date) {
+      dateSelect = date;
+    },
     onClose: function () {
+      console.log(dateSelect);
       $(document.activeElement).blur()
     }
   });
+
+  WORK_TIMES.forEach(time => {
+    $('.select__timer').append(`<option class="input__time" value=${time}>${time}</option>`)
+  })
+  $('.select__timer').formSelect();
+  $('.select__dentist').formSelect();
+
+  // $('.select__timer').on('change', () => {
+  //   timeSelect = $('select').val();
+  // });
 });
