@@ -14,7 +14,7 @@ class AuthController {
     const encryptPassword = await passwordManager.encryptPassword(password);
     let newUser = { name, email, password: encryptPassword };
 
-    if (!!(await isUserExists(email, isDentist))) {
+    if ((await isUserExists(email, isDentist))) {
       return null;
     }
 
@@ -56,7 +56,7 @@ class AuthController {
     try {
       const { userEmail: email, userPassword } = req.body;
 
-      if (!!(await isUserExists(email, isDentist))) {
+      if (!(await isUserExists(email, isDentist))) {
         return res.render("auth-views/login", {
           errorMessage: "Nome de usuário ou senha incorretos",
         });
