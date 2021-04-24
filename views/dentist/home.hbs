@@ -22,38 +22,20 @@
       </tr>
     </thead>
     <tbody class="list">
+      {{#each appointments}}
       <tr class="calendar-patient">
-        <td class="id" style="display:none;">1</td>
-        <td class="schedule">8:00 AM</td>
-        <td class="name">Rabia Carlson</td>
-        <td class="informations">First time</td>
-        <td class="edit"><button class="edit-item-btn">Edit</button></td>
-        <td class="remove"><button class="remove-item-btn">Remove</button></td>
+        <td class="id" style="display:none;">{{this.id}}</td>
+        <td class="schedule">{{this.time}}</td>
+        <td class="name">{{this.patient.name}}</td>
+        <td class="informations">{{this.weekDay}}, {{this.date}}</td>
+        <td class="remove">
+          <form action="/test" method="post">
+            <input tip class="input__id--disabled" value="{{this._id}}" name="scheduleId" />
+            <button type="submit" class="remove-item-btn">Remove</button>
+          </form>
+        </td>
       </tr>
-      <tr class="calendar-patient">
-        <td class="id" style="display:none;">2</td>
-        <td class="schedule">9:00 AM</td>
-        <td class="name">Lucian Millar</td>
-        <td class="informations">Emergency (pain)</td>
-        <td class="edit"><button class="edit-item-btn">Edit</button></td>
-        <td class="remove"><button class="remove-item-btn">Remove</button></td>
-      </tr>
-      <tr class="calendar-patient">
-        <td class="id" style="display:none;">3</td>
-        <td class="schedule">10:00 AM</td>
-        <td class="name">Trixie Foster</td>
-        <td class="informations">Prothesis adjustment</td>
-        <td class="edit"><button class="edit-item-btn">Edit</button></td>
-        <td class="remove"><button class="remove-item-btn">Remove</button></td>
-      </tr>
-      <tr class="calendar-patient">
-        <td class="id" style="display:none;">4</td>
-        <td class="schedule">11:00 AM</td>
-        <td class="name">Johnathon Rollins</td>
-        <td class="informations">Broken bracket</td>
-        <td class="edit"><button class="edit-item-btn">Edit</button></td>
-        <td class="remove"><button class="remove-item-btn">Remove</button></td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
   <table>

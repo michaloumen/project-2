@@ -52,7 +52,6 @@ class AuthController {
   static async postLoginUser(req, res) {
     const { userType } = req.params;
     const isDentist = userType === 'dentist';
-    console.log('isDentist', isDentist)
     try {
       const { userEmail: email, userPassword } = req.body;
 
