@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orelega+One&display=swap');
+
+
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
 * {
   margin: 0;
   padding: 0;
@@ -450,4 +458,11 @@ th {
 .edit-item-btn:hover, .remove-item-btn:hover, #add-btn:hover, #edit-btn:hover{
   background-color:seagreen;
   transition: background-color 0.5s, color 0.5s;
+<<<<<<< HEAD
+=======
+}
+
+.input__id--disabled {
+  display: none;
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
 }

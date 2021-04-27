@@ -1,0 +1,58 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+
+
+<div id="contacts">
+  <table>
+    <thead>
+      <div>
+        <h3 class="calendar-title"><i class="em em-tooth" aria-role="presentation" aria-label="TOOTH"></i>Hello, doctor.
+          Here's your schedule for the day. Have a good job!</h3>
+      </div>
+      <tr>
+        <th class="sort" data-sort="schedule">Schedule</th>
+        <th class="sort" data-sort="name">Name</th>
+        <th class="sort" data-sort="informations">Informations</th>
+        <th colspan="2">
+          <input type="text" class="search" placeholder="Search contact" />
+        </th>
+      </tr>
+    </thead>
+    <tbody class="list">
+      {{#each appointments}}
+      <tr class="calendar-patient">
+        <td class="id" style="display:none;">{{this.id}}</td>
+        <td class="schedule">{{this.time}}</td>
+        <td class="name">{{this.patient.name}}</td>
+        <td class="informations">{{this.weekDay}}, {{this.date}}</td>
+        <td class="remove">
+          <form action="/dentist/delete/{{this.id}}" method="POST">
+            <button type="submit" class="remove-item-btn">Remove</button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <table>
+    <td class="schedule">
+      <input type="hidden" id="id-field" />
+      <input type="text" id="schedule-field" placeholder="Schedule" />
+    </td>
+    <td class="name">
+      <input type="text" id="name-field" placeholder="Name" />
+    </td>
+    <td class="informations">
+      <input type="text" id="informations-field" placeholder="Informations" />
+    </td>
+    <td class="add">
+      <button id="add-btn">Add</button>
+      <button id="edit-btn">Edit</button>
+    </td>
+  </table>
+
+  <script src="/javascript/script.js"></script>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col s12">
+    <form action="/agenda" method="POST">
+      <div>
+        <label>Dentista</label>
+        <select class="select__dentist" name="dentist">
+          <option value="" disabled selected> Escolha um dentista</option>
+          {{#each dentist}}
+          <option class="input__time" value="{{this._id}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div>
+        <label>Data</label>
+        <input name="dateSchedule" type="text" class="datepicker">
+      </div>
+      <div>
+        <label>Horário</label>
+        <select class="select__timer" name="timeSchedule">
+          <option value="" disabled selected> Escolha um horário</option>
+        </select>
+      </div>
+      {{#if isUserLogged}}
+      <div>
+        <label for="userName">Nome</label>
+        <input type="text" name="userName" id="userName" placeholder="Digite o seu nome completo" required minlength="5"
+          maxlength="50">
+      </div>
+      <div>
+        <label for="userEmail">Email</label>
+        <input type="email" name="userEmail" id="userEmail" required>
+        {{#if userEmailError}}
+        <div>
+          <span>{{userEmailError}}</span>
+        </div>
+        {{/if}}
+      </div>
+      <div>
+        <label for="userTelefone">Telefone</label>
+        <input type="tel" name="userPhone" id="userTel" placeholder="(11) 92222-2222" required>
+        {{#if userPhoneError}}
+        <div>
+          <span>{{userPhoneError}}</span>
+        </div>
+        {{/if}}
+      </div>
+      {{/if}}
+      <button type="submit">Marcar</button>
+    </form>
+  </div>
+
+  {{#if textSuccess}}
+  <h3>{{textSuccess}}</h3>
+  {{/if}}
+</div>
