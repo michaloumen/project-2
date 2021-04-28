@@ -15,7 +15,7 @@ The website has a home page with general information about the clinic, such as t
 The product was designed to be used by both dentists and patients. Therefore, it has a part for registration and login of two types of users. For the dentist to register, he needs to have access to a protected route that serves as a pre-registration. This route asks for a password that takes him to the dentist's registration page. When logged into the platform, it will be possible to access the patient's schedule and make appointments through the date-picker system. There is also a possibility (still under construction) to create, read, update and delete (CRUD) patients from the system. However, this option is not yet connected to the date-picker or database.
 
 ## Installing
-You can run it offline by downloading / cloning the project files and installing the environment variables or you can run my online instance from: [Link](https://github.com/myrmanso/projeto-crm-dentista.git)
+You can run it offline by downloading / cloning the project files and installing the environment variables or you can run my online instance from: [Link](https://crm-dentista.herokuapp.com)
 
 And in the terminal run: 
 ```
