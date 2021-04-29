@@ -1,4 +1,71 @@
 <main class="form-auth-container signup">
+<<<<<<< HEAD
+    <h1>Sign Up</h1>
+
+    <form class="form-auth" action="/signup" method="post">
+        <div>
+            <label for="userName">Username</label>
+            <input type="text" name="userName" id="userName" placeholder="Enter your full name" required
+                minlength="5" maxlength="50">
+            {{#if userNameError}}
+            <div>
+                <span>{{userNameError}}</span>
+            </div>
+            {{/if}}
+        </div>
+        <div>
+            <label for="userEmail">Email</label>
+            <input type="email" name="userEmail" id="userEmail" placeholder="email@email.com" required minlength="5"
+                maxlength="50">
+            {{#if userEmailError}}
+            <div>
+                <span>{{userEmailError}}</span>
+            </div>
+            {{/if}}
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required minlength="6"
+                maxlength="50">
+            {{#if passwordError}}
+            <div>
+                <span>{{passwordError}}</span>
+            </div>
+            {{/if}}
+        </div>
+
+        <div>
+        {{#if user.role}}
+        <div>
+        {{!-- deixar isso não visível --}}
+
+        <input type="checkbox" id="role" name="dentist" checked>
+        <label for="scales">Dentista</label>
+        </div>
+
+        {{!-- colocar o campo de cro --}}
+        <div>
+            <label for="cro">CRO</label>
+            <input type="text" name="cro" id="cro" placeholder="Enter your CRO number" required minlength="5"
+                maxlength="6">
+            {{#if errorError}}
+            <div>
+                <span>{{errorError}}</span>
+            </div>
+            {{/if}}
+        </div>
+        {{/if}} 
+
+                {{#if errorMessage}}
+        <div>
+            <span>{{errorMessage}}</span>
+        </div>
+        {{/if}}
+
+        <button type="submit">Submit</button>
+    </form>
+=======
   <h1>Sign Up</h1>
 
   <form class="form-auth" action="/signup" method="post">
@@ -61,4 +128,5 @@
 
       <button type="submit">Submit</button>
   </form>
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
 </main>

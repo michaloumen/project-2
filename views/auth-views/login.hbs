@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+
+<main class="form-auth-container login">
+    <h1>Login</h1>
+
+    <form class="form-auth" action="/login/patient" method="post">
+        <div>
+            <label for="userEmail">Email</label>
+            <input type="text" name="userEmail" id="userEmail" placeholder="Digite o seu nome de usuário">
+        </div>
+
+        <div>
+            <label for="userPassword">Password</label>
+            <input type="password" name="userPassword" id="userPassword" placeholder="Digite sua senha">
+        </div>
+
+        {{#if errorMessage}}
+        <div>
+            <span>{{errorMessage}}</span>
+        </div>
+        {{/if}}
+
+        <button type="submit">Submit</button>
+    </form>
+=======
 <main class="form-auth-container">
   <h1>Faça o login</h1>
 
@@ -20,4 +45,5 @@
 
     <button type="submit">Logar</button>
   </form>
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
 </main>

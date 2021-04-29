@@ -16,7 +16,10 @@
     "express-session": "^1.17.1",
     "hbs": "^4.1.1",
     "js": "^0.1.0",
+<<<<<<< HEAD
+=======
     "moment": "^2.29.1",
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
     "mongoose": "^5.9.15",
     "mongoose-extend-schema": "^1.0.0"
   },

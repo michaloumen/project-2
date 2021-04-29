@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+$(document).ready(function () {
+  $('.datepicker').datepicker({
+=======
 let dateSelect, timeSelect;
 $(document).ready(function () {
   $('.datepicker').datepicker({
     showDaysInNextAndPreviousMonths: true,
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
     showMonthAfterYear: false,
     format: 'dddd, dd mmmm yyyy',
     disableDayFn: (date) => {
@@ -23,6 +28,14 @@ $(document).ready(function () {
       cancel: 'Cancelar',
       close: 'Fechar',
     },
+<<<<<<< HEAD
+    // Formato da data que aparece no input
+    onClose: function () {
+      $(document.activeElement).blur()
+    }
+  });
+});
+=======
     onSelect: function (date) {
       dateSelect = date;
     },
@@ -42,3 +55,4 @@ $(document).ready(function () {
   //   timeSelect = $('select').val();
   // });
 });
+>>>>>>> 23070ed8dcc4d8da833ce2556dc0f8342751b1d4
